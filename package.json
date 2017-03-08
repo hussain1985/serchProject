@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/hussain1985/serchProject/issues"
   },
-  "homepage": "https://github.com/hussain1985/serchProject#readme"
+  "homepage": "https://github.com/hussain1985/serchProject#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
 }
