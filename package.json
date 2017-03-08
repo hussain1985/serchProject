@@ -1,0 +1,19 @@
+{
+  "name": "searchproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hussain1985/serchProject.git"
+  },
+  "author": "Amjad Hussain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hussain1985/serchProject/issues"
+  },
+  "homepage": "https://github.com/hussain1985/serchProject#readme"
+}
