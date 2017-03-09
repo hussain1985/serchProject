@@ -1,2 +1,8 @@
 $baseColor: yellow;
 $headingColor: black;
+$activeBgColor: lighten($baseColor,40%);
+$activeTextColor: gray;
+$headerColors: lighten($baseColor,40%);
+$hoverColor: lighten($baseColor, 30%);
+$menuBackgroundColor: lighten($baseColor,100%);
+$buttonColor: lighten($baseColor,40%);
