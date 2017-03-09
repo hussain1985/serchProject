@@ -2,10 +2,11 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-
+var autoprefixer = require('gulp-autoprefixer');
 
 var SOURCEPATHS = {
-    sassSource: 'src/scss/app.scss'
+    sassSource: 'src/scss/**/*.scss',
+    htmlSource: 'src/*.html'
 }
 
 var DESTINATIONPATH = {
@@ -16,10 +17,16 @@ var DESTINATIONPATH = {
 
 gulp.task('sass', function(){
    return gulp.src(SOURCEPATHS.sassSource)
-   .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
+   .pipe(autoprefixer())
+   .pipe(sass({outputStyle:'compressed'}).on('error', sass.logError))
    .pipe(gulp.dest(DESTINATIONPATH.css));
 });
 
+
+gulp.task('copyHtml', function(){
+    gulp.src(SOURCEPATHS.htmlSource)
+    .pipe(gulp.dest(DESTINATIONPATH.root))
+});
 
 gulp.task('server', ['sass'], function(){
     browserSync.init([DESTINATIONPATH.css + '/*.css', DESTINATIONPATH.root + '/*.html', DESTINATIONPATH.js + '/*.js'], {
@@ -30,8 +37,9 @@ gulp.task('server', ['sass'], function(){
 });
 
 
-gulp.task('watch', ['server'], function(){
-   gulp.watch([SOURCEPATHS.sassSource], ['sass']) 
+gulp.task('watch', ['server', 'copyHtml'], function(){
+   gulp.watch([SOURCEPATHS.sassSource], ['sass']);
+   gulp.watch([SOURCEPATHS.htmlSource], ['copyHtml']);
 });
 
 
