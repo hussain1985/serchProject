@@ -1,6 +1,7 @@
 @import 'variables.scss';
 @import 'bootstrap/bootstrap.scss';
 @import 'button.scss';
+@import 'carparts.scss';
 //$headingColor: white;
 body {}
 
@@ -112,7 +113,7 @@ header {
         }
         
         .table.table-striped{
-            background-color: $menuBackgroundColor;
+            background-color: $headerColors;
         }
     }
     
@@ -130,4 +131,32 @@ header {
 #footer{
     background-color: $baseColor;
     padding: 20px 20px 20px 20px;
+    #kontakt {
+        h4{
+            padding-bottom: 30px;
+        }
+        
+            
+        }
+    #reserdels{
+            h4{
+                padding-bottom: 25px ;
+            }
+        p{
+            padding-right: 50px;
+            text-align: left;
+            word-spacing: .4em;
+        }
+        
+    }
+    
+    #abnatider{
+        h4{
+            padding-bottom: 25px;
+        }
+    }
 }
+
+
+
+
