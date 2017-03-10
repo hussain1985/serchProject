@@ -2,6 +2,7 @@
 @import 'bootstrap/bootstrap.scss';
 @import 'button.scss';
 @import 'carparts.scss';
+@import 'mixins.scss';
 //$headingColor: white;
 body {}
 
@@ -39,25 +40,53 @@ header {
     #searchAndCart {
         padding-top: 15px;
     }
+    //media query
+    @include mdscreen{
+        img{
+            width: 200px;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pull-right{
+                float: none !important;
+            }
+        ul{
+            
+            padding-left: 0px;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+      
+        }
+    .shoppingCart {
+        
+        padding-left: 12px;
+        
+        margin-bottom: 10px;
+        
+    }
+    form{
+        padding-left: 12px;
+        padding-right: 12px;
+        
+    }
 }
 
 //breadcrumbs
-
-#breadcrumbs{
+#breadcrumbs {
     //border-bottom: 2px solid green !important;
-    
-    
-    ol{
+    ol {
         background: $headerColors;
         //border-bottom: 1px solid orange;
         padding: 5px 0px 5px 20px;
-        
-            a {
+        a {
             color: $headingColor;
-         a .active{   
+            a .active {
                 color: $activeTextColor;
             }
-            a:hover{
+            a:hover {
                 color: green;
                 text-decoration: none;
             }
@@ -65,98 +94,120 @@ header {
     }
 }
 
-
-
 //main body
-
-
-#mainBody{
-    #menu{
-        .list-group{
-            a{
+#mainBody {
+    .burgerMenu{
+        color: $headingColor;
+        display:none;
+        vertical-align: middle;
+        
+            text-decoration: none;
+        
+    }
+    #menu {
+        .list-group {
+            a {
                 background-color: $menuBackgroundColor;
                 text-transform: capitalize;
                 color: $headingColor;
                 
             }
-            a:hover{
-                    background-color: $hoverColor;
-                }
-            a:focus{
-                background-color: $activeBgColor;
-                
+            a:hover {
+                background-color: $hoverColor;
             }
-            a.active{
+            a:focus {
+                background-color: $activeBgColor;
+            }
+            a.active {
                 background-color: $activeBgColor;
                 border: 1px solid lightgray;
             }
-            
         }
-    }// menu ends here
-    
-    
-    
-    #contentBody{
-        .panel.panel-default{
-            
-            .panel-heading{
-            background-color: $headerColors !important;
-            height: 40px;
-            vertical-align: middle;
-            p{
-                padding: 0px;
-                
+    } // menu ends here
+    #contentBody {
+        .panel.panel-default {
+            .panel-heading {
+                background-color: $headerColors !important;
+                height: 40px;
+                vertical-align: middle;
+                p {
+                    padding: 0px;
+                }
             }
-            
         }
-           
-        }
-        
-        .table.table-striped{
+        .table.table-striped {
             background-color: $headerColors;
         }
     }
+    //media query
+    @include mdscreen{
+       
+        
+        #menu{
+            width: 100%;
+            a{
+                padding: 10px  !important;
+                font-size: .9em;
+               
+            }
+            
+        }
+    }
+    
+    
+    @include mdScreensixhundred{
+        
+        .burgerMenu{
+            display:block;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        #collapseablemenu{
+                display: none;
+            }
+        #menu{
+           
+            a{
+                
+               font-size: 1em;
+            }
+            
+            
+        }
+        
+    }
+    
+    
     
 }
 
-
-#promotion{
-    .strikethrough{
+#promotion {
+    .strikethrough {
         text-decoration: line-through !important;
+    }
 }
-}
-
-
-
-#footer{
+// footer
+#footer {
     background-color: $baseColor;
     padding: 20px 20px 20px 20px;
     #kontakt {
-        h4{
+        h4 {
             padding-bottom: 30px;
         }
-        
-            
+    }
+    #reserdels {
+        h4 {
+            padding-bottom: 25px;
         }
-    #reserdels{
-            h4{
-                padding-bottom: 25px ;
-            }
-        p{
+        p {
             padding-right: 50px;
             text-align: left;
             word-spacing: .4em;
         }
-        
     }
-    
-    #abnatider{
-        h4{
+    #abnatider {
+        h4 {
             padding-bottom: 25px;
         }
     }
 }
-
-
-
-

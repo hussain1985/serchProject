@@ -1,0 +1,11 @@
+@mixin mdscreen{
+    @media only screen and(max-width: 990px){
+        @content;
+    }
+}
+
+@mixin mdScreensixhundred{
+    @media only screen and(max-width: 766px){
+        @content;
+    }
+}
