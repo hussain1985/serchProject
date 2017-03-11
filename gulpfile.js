@@ -1,18 +1,21 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
 
+
 var SOURCEPATHS = {
     sassSource: 'src/scss/**/*.scss',
-    htmlSource: 'src/*.html'
+    htmlSource: 'src/*.html',
+    jsSource: 'src/js/*.js'
 }
 
 var DESTINATIONPATH = {
     root: 'app/',
     css: 'app/css',
-    js: 'app/js'
+    js: 'app/js/'
 }
 
 gulp.task('sass', function(){
@@ -22,6 +25,10 @@ gulp.task('sass', function(){
    .pipe(gulp.dest(DESTINATIONPATH.css));
 });
 
+gulp.task('script',function(){
+   gulp.src(SOURCEPATHS.jsSource)
+   .pipe(gulp.dest(DESTINATIONPATH.js))
+});
 
 gulp.task('copyHtml', function(){
     gulp.src(SOURCEPATHS.htmlSource)
@@ -37,9 +44,10 @@ gulp.task('server', ['sass'], function(){
 });
 
 
-gulp.task('watch', ['server', 'copyHtml'], function(){
+gulp.task('watch', ['server', 'copyHtml' ,'script'], function(){
    gulp.watch([SOURCEPATHS.sassSource], ['sass']);
    gulp.watch([SOURCEPATHS.htmlSource], ['copyHtml']);
+    gulp.watch([SOURCEPATHS.jsSource],['script']);
 });
 
 

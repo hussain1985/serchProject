@@ -3,6 +3,7 @@
 @import 'button.scss';
 @import 'carparts.scss';
 @import 'mixins.scss';
+@import 'bootstrap/fontawesom.scss';
 //$headingColor: white;
 body {}
 
@@ -54,7 +55,7 @@ header {
             }
         ul{
             
-            padding-left: 0px;
+            padding-left: 12px;
             margin-top: 30px;
             margin-bottom: 0px;
         }
